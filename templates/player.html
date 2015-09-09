@@ -1,0 +1,20 @@
+<template name="player">
+  {{#if currentUser}}
+    <h1>{{currentUser.services.google.given_name}}</h1>
+    <h2>Player hand:
+      {{#each playerHand currentUser._id}}
+        |{{Rank}}-{{Suit}}|
+      {{/each}}
+    </h2>
+    <h3>Stack: {{playerStack currentUser._id}}</h3>
+    <div class="player-action-buttons {{folded currentUser._id}}">
+      <button class="fold" data-id={{currentUser._id}}>Fold</button>
+      <button class="check" data-id={{currentUser._id}}>Check</button>
+      <button class="call" data-id={{currentUser._id}}>Call</button>
+      <button class="min-raise" data-id={{currentUser._id}}>Min Raise</button>
+      <button class="all-in" data-id={{currentUser._id}}>All In</button>
+    </div>
+  {{else}}
+    <a href="#" class="btn login">Login With Google</a>
+  {{/if}}
+</template>

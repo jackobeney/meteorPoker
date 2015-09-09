@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+.player {
+  display: none;
+}
+
+@media only screen and (max-device-width: 680px) {
+  .player {
+    display: block;
+  }
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .table {
+    display: none;
+  }
+}

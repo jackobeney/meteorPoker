@@ -1,0 +1,29 @@
+<template name="table">
+  <h1>Table</h1>
+  <button class="deal">Deal</button>
+  <button class="new-game">New game</button>
+  <h2>Players</h2>
+  {{#each player}}
+    <h3>{{name}} {{stack}}</h3>
+  {{/each}}
+  <h2>Current pot: {{getCurrentPot}}</h2>
+  <button class="flop">Flop</button>
+  <button class="turn">Turn</button>
+  <button class="river">River</button>
+  <h2>Cards on table:
+    {{#each round}}
+      {{#each flop}}
+        |{{Rank}}-{{Suit}}|
+      {{/each}}
+
+      {{#each turn}}
+        |{{Rank}}-{{Suit}}|
+      {{/each}}
+
+      {{#each river}}
+        |{{Rank}}-{{Suit}}|
+      {{/each}}
+    {{/each}}
+  </h2>
+
+</template>
